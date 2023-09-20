@@ -1,0 +1,68 @@
+/* Fun quotes*/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random quotes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .text {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .speaker {
+            font-size: 16px;
+        }
+        .button {
+            background-color:#333;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="text">"Placeholder quote text."</p>
+        <p class="spraker">- "Placeholder Author."</p>
+        <button class="button" onclick="getRandomQuote()">Random Quote</button>
+    </div>
+    
+    <script>
+        function getRandomQuote() {
+            const quotes = [
+                {text: "I'm writing a book. I've got the page numbers done.",
+                 author: "Steven wright"
+                },
+                {text: "The best time to plan a book is while you’re doing the dishes.",
+                 author: "Agatha Christie"
+                },
+                {text: "I would love to stand here and talk with you—but I’m not going to.",
+                    author: "Phil Connors"
+                }
+            ];
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[randomIndex];
+            const quoteText = document.querySelector('.quote-text');
+            const quoteAuthor = document.querySelector('.quote-author');
+            quoteText.textContent = `"${randomQuote.text}"`;
+            quoteAuthor.textContent = `- ${randomQuote.author}`;
+        }
+        getRandomQuote();
+    </script>
+</body>
+</html>
